@@ -21,7 +21,7 @@ void main(void)
 		{
 			unsigned int k = 0;
 			bool exit = false;
-			string aux = "The quick brown fox jumps over the lazy dog" + to_string(rand());
+			string aux = to_string(rand()) + "The quick brown fox jumps over the lazy dog" ;
 			while (!exit)
 			{
 				k++;
