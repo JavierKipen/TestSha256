@@ -18,14 +18,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="picosha2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="3way.h">
       <Filter>Cryptopp</Filter>
     </ClInclude>

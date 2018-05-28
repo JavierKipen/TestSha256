@@ -119,7 +119,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3way.h" />
@@ -218,7 +218,6 @@
     <ClInclude Include="padlkrng.h" />
     <ClInclude Include="panama.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="picosha2.h" />
     <ClInclude Include="pkcspad.h" />
     <ClInclude Include="poly1305.h" />
     <ClInclude Include="polynomi.h" />
