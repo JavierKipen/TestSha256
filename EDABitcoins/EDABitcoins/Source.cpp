@@ -8,8 +8,8 @@
 using namespace std;
 using namespace CryptoPP;
 
-#define PRIVATE_KEY_CHARS 20
-#define PUBLIC_KEY_CHARS 40
+#define PRIVATE_KEY_CHARS 32
+#define PUBLIC_KEY_CHARS 64
 
 ECDSA<ECP, SHA256>::PrivateKey generatePrivKey();
 vector<byte> getSignature(ECDSA<ECP, SHA256>::PrivateKey &privKey, string &data);
@@ -47,7 +47,9 @@ ECDSA<ECP, SHA256>::PrivateKey generatePrivKey()
 {
 	AutoSeededRandomPool autoSeededRandomPool;
 	ECDSA<ECP, SHA256>::PrivateKey privateKey;
-	privateKey.Initialize(autoSeededRandomPool, ASN1::secp160r1());
+	
+	//privateKey.Initialize(autoSeededRandomPool, ASN1::secp160r1());
+	privateKey.Initialize(autoSeededRandomPool, ASN1::secp256k1());
 	bool result = privateKey.Validate(autoSeededRandomPool, 3);
 	if (!result)
 		cout << "private key is not valid!";
@@ -77,6 +79,7 @@ void showData(ECDSA<ECP, SHA256>::PrivateKey &privKey, ECDSA<ECP, SHA256>::Publi
 	vector<byte> privKeyByteArray(PRIVATE_KEY_CHARS), pubKeyByteArray(PUBLIC_KEY_CHARS);
 	const Integer &privateKeyInteger = privKey.GetPrivateExponent(); //La key posta
 	privateKeyInteger.Encode(privKeyByteArray.data(), privateKeyInteger.ByteCount());
+	unsigned int auxx = privateKeyInteger.ByteCount();
 	cout << "Public Key: ";
 	hexPrint(privKeyByteArray);
 
